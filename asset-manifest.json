@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mom_frontend/static/css/main.7e239a25.css",
+    "main.js": "/mom_frontend/static/js/main.b61e1b55.js",
+    "index.html": "/mom_frontend/index.html",
+    "main.7e239a25.css.map": "/mom_frontend/static/css/main.7e239a25.css.map",
+    "main.b61e1b55.js.map": "/mom_frontend/static/js/main.b61e1b55.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7e239a25.css",
+    "static/js/main.b61e1b55.js"
+  ]
+}
