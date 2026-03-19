@@ -5,6 +5,11 @@ import Layout from "./Layout";
 import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import About from './pages/About'; //Include then add
+import Recipes from './pages/Recipes';
+import MealPlanner from './pages/Meal-planner';
+import ShoppingList from './pages/Shopping-list';
+import Contact from './pages/Contact';
+import CreateAccount from './pages/Create-account';
 
 
 const App = () => {
@@ -14,6 +19,11 @@ const App = () => {
         <Route path = "/" element = {<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="recipes" element={<Recipes />} />
+          <Route path="meal-planner" element={<MealPlanner />} />
+          <Route path="shopping-list" element={<ShoppingList />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="create-account" element={<CreateAccount />} />
         </Route>
       </Routes>
       
