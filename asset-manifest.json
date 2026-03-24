@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/mom_frontend/static/css/main.7e239a25.css",
-    "main.js": "/mom_frontend/static/js/main.b61e1b55.js",
+    "main.css": "/mom_frontend/static/css/main.f7e8111b.css",
+    "main.js": "/mom_frontend/static/js/main.d6e5fece.js",
+    "static/media/MOM_LOGO 2.png": "/mom_frontend/static/media/MOM_LOGO 2.0a00bafc0596b9bc1ae3.png",
+    "static/media/MOM_LOGO.png": "/mom_frontend/static/media/MOM_LOGO.c9b16312cbd1f95b5a0a.png",
     "index.html": "/mom_frontend/index.html",
-    "main.7e239a25.css.map": "/mom_frontend/static/css/main.7e239a25.css.map",
-    "main.b61e1b55.js.map": "/mom_frontend/static/js/main.b61e1b55.js.map"
+    "main.f7e8111b.css.map": "/mom_frontend/static/css/main.f7e8111b.css.map",
+    "main.d6e5fece.js.map": "/mom_frontend/static/js/main.d6e5fece.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e239a25.css",
-    "static/js/main.b61e1b55.js"
+    "static/css/main.f7e8111b.css",
+    "static/js/main.d6e5fece.js"
   ]
 }
