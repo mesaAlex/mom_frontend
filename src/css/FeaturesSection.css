@@ -1,0 +1,49 @@
+.features {
+  padding: 36px 0;
+  background-image: linear-gradient(rgba(246, 244, 242, 0.7), rgba(246, 244, 242, 0.7)), url('../images/texture_midsection.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.features-inner {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  align-items: stretch;
+}
+
+.feature-slot {
+  display: grid;
+  grid-template-columns: 1fr 3px;
+  align-items: center;
+  gap: 22px;
+}
+
+.feature-slot:last-child {
+  grid-template-columns: 1fr;
+}
+
+.feature-divider {
+  width: 3px;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 1px;
+  opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+  .features-inner {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .feature-slot,
+  .feature-slot:last-child {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-divider {
+    display: none;
+  }
+}

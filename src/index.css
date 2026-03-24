@@ -1,39 +1,68 @@
-/* This file is for everything that will be used globally */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;700&display=swap');
+
+:root {
+  --beige: #efe6dc;
+  --accent: #8d5b47;
+  --muted: #7a9a8e;
+  --dark: #3b2f2a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  /* background: #f2ebe6; */
+  margin: 0;
+  font-family: 'Instrument Sans', Arial, sans-serif;
+  color: var(--dark);
+  background: #faf7f5;
 }
 
-#content {
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-  background: color;
-}
-
-.hidden {
-  display: none;
-}
-
-link {
+a {
   text-decoration: none;
 }
 
-@media only screen and (max-width: 768px) {
-  .columns {
-    display: flex;
-  }
+#content {
+  min-height: 100vh;
+}
 
-  .one {
-    flex: 1;
-  }
-  .two {
-    flex: 2;
-  }
-  .three {
-    flex: 3;
-  }
-  .four {
-    flex: 4;
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+.wrap h2 {
+  text-align: center;
+  font-weight: 300;
+  font-size: 2.2rem;
+}
+
+.lead {
+  margin: 0 0 18px;
+  color: #4b4340;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid rgba(141, 91, 71, 0.6);
+  background: rgba(141, 91, 71, 0.92);
+  color: var(--beige);
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.18);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: rgba(141, 91, 71, 0.95);
+  color: #fff;
+  border-color: rgba(141, 91, 71, 0.95);
+}
+
+@media (max-width: 600px) {
+  .wrap h2 {
+    font-size: 1.8rem;
   }
 }

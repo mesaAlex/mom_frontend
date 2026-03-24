@@ -1,0 +1,54 @@
+.instructions-section {
+  flex: 1;
+  background: #e8dfd7;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.instructions-section h2 {
+  font-size: 1.4em;
+  margin: 0 0 12px;
+  color: var(--dark);
+  font-weight: 400;
+  text-align: left;
+}
+
+.instructions-list {
+  padding: 0;
+  margin: 0;
+  counter-reset: item;
+  list-style-type: none;
+}
+
+.instructions-list li {
+  counter-increment: item;
+  margin-bottom: 16px;
+  padding-left: 30px;
+  position: relative;
+  color: #333;
+  line-height: 1.6;
+}
+
+.instructions-list li::before {
+  content: counter(item);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--muted);
+  color: #fff;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .instructions-section {
+    padding: 20px;
+  }
+}

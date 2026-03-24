@@ -1,0 +1,39 @@
+.shopping-list-page {
+	background: #faf7f5;
+	padding: 40px 0;
+	min-height: 80vh;
+}
+
+.shopping-hero {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.shopping-hero h1 {
+	font-size: 2.5rem;
+	margin: 0 0 10px;
+	color: var(--dark);
+	font-weight: 300;
+}
+
+.shopping-subtext {
+	color: #666;
+	margin: 0;
+}
+
+.clear-items {
+	display: block;
+	margin: 0 auto;
+	background: var(--muted);
+	border: none;
+}
+
+.clear-items:hover {
+	background: #6b8980;
+}
+
+@media (max-width: 600px) {
+	.shopping-hero h1 {
+		font-size: 1.8rem;
+	}
+}

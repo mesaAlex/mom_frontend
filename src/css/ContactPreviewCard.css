@@ -1,0 +1,51 @@
+.contact-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 0 12px 30px rgba(59, 47, 42, 0.12);
+}
+
+.contact-card h2 {
+  text-align: left;
+  font-size: 1.7rem;
+  margin: 0 0 8px;
+  font-weight: 400;
+}
+
+.contact-note {
+  margin: 0 0 18px;
+  color: #6c625d;
+}
+
+.contact-preview-grid {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.preview-row {
+  padding: 12px 14px;
+  border: 1px solid #d8d0ca;
+  border-radius: 10px;
+  color: #7f756f;
+  background: #fff;
+}
+
+.preview-message {
+  min-height: 130px;
+}
+
+.contact-submit {
+  justify-self: start;
+}
+
+@media (max-width: 600px) {
+  .contact-card {
+    padding: 20px;
+  }
+
+  .contact-submit {
+    width: 100%;
+    text-align: center;
+  }
+}

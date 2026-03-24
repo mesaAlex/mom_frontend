@@ -1,0 +1,21 @@
+.recipe-detail-page {
+  background: #faf7f5;
+  padding: 0 0 40px;
+  min-height: 80vh;
+}
+
+.recipe-detail-page > .wrap {
+  padding-top: 20px;
+}
+
+.recipe-content {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+@media (max-width: 600px) {
+  .recipe-content {
+    flex-direction: column;
+  }
+}

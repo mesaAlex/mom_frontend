@@ -1,8 +1,20 @@
 import "../css/Create-account.css";
+import CreateAccountPreview from "../components/CreateAccountPreview";
+import SectionIntro from "../components/SectionIntro";
 
 const CreateAccount = () => {
     return (
-        <h1>Create Account Page</h1>
+        <main className="create-account-page">
+            <SectionIntro
+                className="centered"
+                beforeContent={<div className="signup-icon">♥</div>}
+                title="Create an Account"
+                description="Join MOM and start planning your healthy meals today."
+                descriptionClassName="signup-subtext"
+            />
+
+            <CreateAccountPreview />
+        </main>
     );
 };
 

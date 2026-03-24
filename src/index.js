@@ -10,6 +10,7 @@ import MealPlanner from './pages/Meal-planner';
 import ShoppingList from './pages/Shopping-list';
 import Contact from './pages/Contact';
 import CreateAccount from './pages/Create-account';
+import ViewRecipe from './pages/View-recipe';
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="shopping-list" element={<ShoppingList />} />
           <Route path="contact" element={<Contact />} />
           <Route path="create-account" element={<CreateAccount />} />
+          <Route path="view-recipe" element={<ViewRecipe />} />
         </Route>
       </Routes>
       
