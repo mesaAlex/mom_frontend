@@ -1,15 +1,26 @@
 {
   "files": {
-    "main.css": "/mom_frontend/static/css/main.8f9c7fb1.css",
-    "main.js": "/mom_frontend/static/js/main.8d0b5a46.js",
+    "main.css": "/mom_frontend/static/css/main.8400ec74.css",
+    "main.js": "/mom_frontend/static/js/main.579e5caf.js",
+    "static/media/texture_midsection.jpeg": "/mom_frontend/static/media/texture_midsection.8afea452e98611fc60a3.jpeg",
+    "static/media/checklist_icon.png": "/mom_frontend/static/media/checklist_icon.cfdc7daccac1f19700a3.png",
+    "static/media/account_page_background.png": "/mom_frontend/static/media/account_page_background.94c882b75e9acc182c59.png",
+    "static/media/book_image.png": "/mom_frontend/static/media/book_image.34b4d50f84fc873b485f.png",
+    "static/media/chicken_salad.png": "/mom_frontend/static/media/chicken_salad.c021ef7940c5737398ab.png",
+    "static/media/tofu_salad.png": "/mom_frontend/static/media/tofu_salad.cd86084a7880291d5260.png",
+    "static/media/salmon_salad.png": "/mom_frontend/static/media/salmon_salad.b7639588644705063600.png",
+    "static/media/trending_background.png": "/mom_frontend/static/media/trending_background.bd2272a8acd84a2adf07.png",
+    "static/media/recipes_background.png": "/mom_frontend/static/media/recipes_background.99fa573699a572c5eada.png",
+    "static/media/icon_nutrition.png": "/mom_frontend/static/media/icon_nutrition.8a347f9be172cdcc46a5.png",
+    "static/media/nutrition_icon_transparent.png": "/mom_frontend/static/media/nutrition_icon_transparent.49c2a1d196eaa8126a5d.png",
     "static/media/MOM_LOGO 2.png": "/mom_frontend/static/media/MOM_LOGO 2.0a00bafc0596b9bc1ae3.png",
     "static/media/MOM_LOGO.png": "/mom_frontend/static/media/MOM_LOGO.c9b16312cbd1f95b5a0a.png",
     "index.html": "/mom_frontend/index.html",
-    "main.8f9c7fb1.css.map": "/mom_frontend/static/css/main.8f9c7fb1.css.map",
-    "main.8d0b5a46.js.map": "/mom_frontend/static/js/main.8d0b5a46.js.map"
+    "main.8400ec74.css.map": "/mom_frontend/static/css/main.8400ec74.css.map",
+    "main.579e5caf.js.map": "/mom_frontend/static/js/main.579e5caf.js.map"
   },
   "entrypoints": [
-    "static/css/main.8f9c7fb1.css",
-    "static/js/main.8d0b5a46.js"
+    "static/css/main.8400ec74.css",
+    "static/js/main.579e5caf.js"
   ]
 }
