@@ -9,6 +9,7 @@ import salmonSalad from "../images/salmon_salad.png";
 import chickenSalad from "../images/chicken_salad.png";
 import tofuSalad from "../images/tofu_salad.png";
 
+
 const FEATURES = [
     {
         imageSrc: iconNutrition,
