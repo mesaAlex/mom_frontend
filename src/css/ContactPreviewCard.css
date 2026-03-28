@@ -31,12 +31,44 @@
   background: #fff;
 }
 
+.contact-input {
+  width: 100%;
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-input::placeholder {
+  color: #7f756f;
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: rgba(141, 91, 71, 0.9);
+  box-shadow: 0 0 0 3px rgba(141, 91, 71, 0.14);
+}
+
 .preview-message {
   min-height: 130px;
 }
 
+.contact-textarea {
+  resize: vertical;
+}
+
 .contact-submit {
   justify-self: start;
+  font: inherit;
+}
+
+.contact-submit:disabled {
+  cursor: wait;
+  opacity: 0.8;
+}
+
+.contact-result {
+  min-height: 1.25rem;
+  color: #6c625d;
+  font-size: 0.95rem;
 }
 
 @media (max-width: 600px) {

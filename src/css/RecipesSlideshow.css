@@ -1,0 +1,122 @@
+.recipes-slideshow {
+	position: relative;
+	margin: 0 0 24px;
+	border-radius: 18px;
+	overflow: hidden;
+	box-shadow: 0 14px 30px rgba(59, 47, 42, 0.16);
+	background: linear-gradient(135deg, rgba(248, 239, 231, 0.95), rgba(255, 255, 255, 0.98));
+	min-height: 270px;
+}
+
+.recipes-slides-track {
+	position: relative;
+	height: min(43vw, 360px);
+	min-height: 260px;
+	padding: 12px;
+}
+
+.recipes-slide-image {
+	position: absolute;
+	inset: 12px;
+	width: calc(100% - 24px);
+	height: calc(100% - 24px);
+	object-fit: contain;
+	object-position: center;
+	opacity: 0;
+	transition: opacity 0.8s ease-in-out;
+	border-radius: 14px;
+	filter: saturate(1.03) contrast(1.02);
+}
+
+.recipes-slide-image.active {
+	opacity: 1;
+}
+
+.recipes-slide-control {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	border: none;
+	background: rgba(59, 47, 42, 0.58);
+	color: #fff;
+	padding: 9px 12px;
+	border-radius: 10px;
+	cursor: pointer;
+	font: inherit;
+	transition: background-color 0.2s ease;
+}
+
+.recipes-slide-control:hover,
+.recipes-slide-control:focus-visible {
+	background: rgba(59, 47, 42, 0.8);
+	outline: none;
+}
+
+.recipes-slide-prev {
+	left: 14px;
+}
+
+.recipes-slide-next {
+	right: 14px;
+}
+
+.recipes-slide-dots {
+	position: absolute;
+	left: 50%;
+	bottom: 14px;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 8px;
+	padding: 7px 10px;
+	border-radius: 999px;
+	background: rgba(59, 47, 42, 0.45);
+}
+
+.recipes-slide-dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 999px;
+	border: none;
+	background: rgba(255, 255, 255, 0.55);
+	cursor: pointer;
+	padding: 0;
+}
+
+.recipes-slide-dot.active {
+	background: #fff;
+}
+
+@media (max-width: 900px) {
+	.recipes-slide-image {
+		inset: 10px;
+		width: calc(100% - 20px);
+		height: calc(100% - 20px);
+	}
+
+	.recipes-slides-track {
+		height: min(48vw, 320px);
+	}
+}
+
+@media (max-width: 600px) {
+	.recipes-slideshow {
+		min-height: 220px;
+	}
+
+	.recipes-slides-track {
+		height: 56vw;
+		min-height: 210px;
+		padding: 8px;
+	}
+
+	.recipes-slide-image {
+		inset: 8px;
+		width: calc(100% - 16px);
+		height: calc(100% - 16px);
+	}
+
+	.recipes-slide-control {
+		padding: 8px 10px;
+		font-size: 0.9rem;
+	}
+}

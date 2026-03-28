@@ -1,5 +1,6 @@
 import RecipeCard from "../components/RecipeCard";
 import RecipeControlsPreview from "../components/RecipeControlsPreview";
+import RecipesSlideshow from "../components/RecipesSlideshow";
 import SectionIntro from "../components/SectionIntro";
 import "../css/Recipes.css";
 import salmonSalad from "../images/salmon_salad.png";
@@ -67,6 +68,8 @@ const Recipes = () => {
                     description="Browse and save recipes that match your goals."
                     descriptionClassName="recipes-subtext"
                 />
+
+                <RecipesSlideshow />
 
                 <RecipeControlsPreview />
 

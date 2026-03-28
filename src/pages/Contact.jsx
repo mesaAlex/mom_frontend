@@ -17,7 +17,7 @@ const Contact = () => {
                     eyebrow="Get in touch"
                     eyebrowClassName="contact-eyebrow"
                     title="Contact Meals on Mesa"
-                    description="Contact form functionality is coming in the next part. For now, this page keeps your complete responsive layout and content structure."
+                    description="Send a message directly from this page for recipe questions, project feedback, or ideas for new healthy meals."
                     descriptionClassName="contact-lead"
                 >
                     <ul className="contact-highlights">
