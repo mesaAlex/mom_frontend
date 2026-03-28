@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/mom_frontend/static/css/main.8400ec74.css",
-    "main.js": "/mom_frontend/static/js/main.579e5caf.js",
+    "main.css": "/mom_frontend/static/css/main.7071091d.css",
+    "main.js": "/mom_frontend/static/js/main.d98cec7f.js",
     "static/media/texture_midsection.jpeg": "/mom_frontend/static/media/texture_midsection.8afea452e98611fc60a3.jpeg",
     "static/media/checklist_icon.png": "/mom_frontend/static/media/checklist_icon.cfdc7daccac1f19700a3.png",
     "static/media/account_page_background.png": "/mom_frontend/static/media/account_page_background.94c882b75e9acc182c59.png",
@@ -15,12 +15,15 @@
     "static/media/nutrition_icon_transparent.png": "/mom_frontend/static/media/nutrition_icon_transparent.49c2a1d196eaa8126a5d.png",
     "static/media/MOM_LOGO 2.png": "/mom_frontend/static/media/MOM_LOGO 2.0a00bafc0596b9bc1ae3.png",
     "static/media/MOM_LOGO.png": "/mom_frontend/static/media/MOM_LOGO.c9b16312cbd1f95b5a0a.png",
+    "static/media/slide_1_meals_on_mesa.png": "/mom_frontend/static/media/slide_1_meals_on_mesa.b1720b2ad9dec3899cac.png",
+    "static/media/slide_3_meals_on_mesa.png": "/mom_frontend/static/media/slide_3_meals_on_mesa.cd146709b93609cc95e4.png",
+    "static/media/slide_2_meals_on_mesa.png": "/mom_frontend/static/media/slide_2_meals_on_mesa.e2975048db2a1c5b6e70.png",
     "index.html": "/mom_frontend/index.html",
-    "main.8400ec74.css.map": "/mom_frontend/static/css/main.8400ec74.css.map",
-    "main.579e5caf.js.map": "/mom_frontend/static/js/main.579e5caf.js.map"
+    "main.7071091d.css.map": "/mom_frontend/static/css/main.7071091d.css.map",
+    "main.d98cec7f.js.map": "/mom_frontend/static/js/main.d98cec7f.js.map"
   },
   "entrypoints": [
-    "static/css/main.8400ec74.css",
-    "static/js/main.579e5caf.js"
+    "static/css/main.7071091d.css",
+    "static/js/main.d98cec7f.js"
   ]
 }
