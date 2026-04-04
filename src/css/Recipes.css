@@ -32,6 +32,10 @@
 	font-weight: 500;
 }
 
+.recipes-error {
+	color: #c0392b;
+}
+
 .recipes-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);

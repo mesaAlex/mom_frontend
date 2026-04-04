@@ -1,56 +1,66 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import "../css/View-recipe.css";
-import salmonSalad from "../images/salmon_salad.png";
 import RecipeBreadcrumb from "../components/RecipeBreadcrumb";
 import RecipeHeaderSection from "../components/RecipeHeaderSection";
 import RecipeIngredientsSection from "../components/RecipeIngredientsSection";
 import RecipeInstructionsSection from "../components/RecipeInstructionsSection";
 import RecipeVideoSection from "../components/RecipeVideoSection";
-
-const RECIPE = {
-  title: "Salmon Salad",
-  description: "A fresh, high-protein salad with roasted salmon, crisp greens, and a simple lemon vinaigrette",
-  tags: ["High-protein", "Low-carb", "Gut-friendly"],
-  prepMinutes: "10 min",
-  cookMinutes: "12 min",
-  servings: 2,
-  imageSrc: salmonSalad,
-  ingredients: [
-    "2 Salmon Fillets",
-    "4 cups mixed greens",
-    "1 avocado, sliced",
-    "1 cup cherry tomatoes",
-    "1/2 cucumber, slices",
-    "2 tbs olive oil",
-    "1 tbsp lemon juice",
-    "1 tsp Dijon Mustard",
-    "1 tsp honey",
-    "Salt & pepper to taste"
-  ],
-  instructions: [
-    "Preheat the oven to 400°F (200°C).",
-    "Season the salmon fillets with salt, pepper, and a drizzle of olive oil. Place them on a lined baking sheet.",
-    "Bake the salmon for 10-12 minutes, or until it flakes easily with a fork. Remove from the oven and let it rest for a few minutes.",
-    "Taste the dressing.",
-    "In a small bowl, whisk together olive oil, lemon juice, Dijon mustard, honey, salt, and pepper until well combined.",
-    "Assemble the salad.",
-    "In a large bowl, combine the mixed greens, sliced avocado, cherry tomatoes, and cucumber.",
-    "Add the salmon.",
-    "Flake the cooked salmon into large pieces and place it on top of the salad.",
-    "Drizzle the dressing over the salad and toss gently to combine. Serve immediately."
-  ]
-};
+import API_BASE_URL from "../api";
 
 const ViewRecipe = () => {
+  const { id } = useParams();
+  const [recipe, setRecipe] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch(`${API_BASE_URL}/api/recipes/${id}`)
+      .then(res => {
+        if (!res.ok) throw new Error("Recipe not found");
+        return res.json();
+      })
+      .then(data => {
+        setRecipe({
+          ...data,
+          imageSrc: `${API_BASE_URL}${data.image}`,
+          prepMinutes: `${data.prepMinutes} min`,
+          cookMinutes: `${data.cookMinutes} min`,
+        });
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, [id]);
+
+  if (loading) {
+    return (
+      <main className="recipe-detail-page">
+        <div className="wrap"><p className="recipes-status">Loading recipe...</p></div>
+      </main>
+    );
+  }
+
+  if (error || !recipe) {
+    return (
+      <main className="recipe-detail-page">
+        <div className="wrap"><p className="recipes-status recipes-error">Error: {error || "Recipe not found"}</p></div>
+      </main>
+    );
+  }
+
   return (
     <main className="recipe-detail-page">
-      <RecipeBreadcrumb currentLabel={RECIPE.title} />
+      <RecipeBreadcrumb currentLabel={recipe.title} />
 
       <div className="wrap">
-        <RecipeHeaderSection recipe={RECIPE} />
+        <RecipeHeaderSection recipe={recipe} />
 
         <div className="recipe-content">
-          <RecipeIngredientsSection ingredients={RECIPE.ingredients} />
-          <RecipeInstructionsSection instructions={RECIPE.instructions} />
+          <RecipeIngredientsSection ingredients={recipe.ingredients} />
+          <RecipeInstructionsSection instructions={recipe.instructions} />
         </div>
 
         <RecipeVideoSection />

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../css/RecipeCard.css";
 
-const RecipeCard = ({ imageSrc, title, description, tags, prepMinutes, cookMinutes, compact = false, viewLink = "/view-recipe" }) => {
+const RecipeCard = ({ id, imageSrc, title, description, tags, prepMinutes, cookMinutes, compact = false }) => {
   return (
     <article className={`recipe-card${compact ? " compact" : ""}`}>
       <div className="recipe-image-wrapper">
@@ -21,7 +21,7 @@ const RecipeCard = ({ imageSrc, title, description, tags, prepMinutes, cookMinut
         <span>Cook: {cookMinutes} min</span>
       </div>
       {!compact ? (
-        <Link to={viewLink} className="btn-view-recipe">
+        <Link to={`/view-recipe/${id}`} className="btn-view-recipe">
           View Recipe
         </Link>
       ) : null}
