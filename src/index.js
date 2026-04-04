@@ -4,7 +4,7 @@ import './index.css';
 import Layout from "./Layout";
 import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import About from './pages/About'; //Include then add
+import About from './pages/About';
 import Recipes from './pages/Recipes';
 import MealPlanner from './pages/Meal-planner';
 import ShoppingList from './pages/Shopping-list';
