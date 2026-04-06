@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import "../css/RecipeCard.css";
 
 const RecipeCard = ({ id, imageSrc, title, description, tags, prepMinutes, cookMinutes, compact = false }) => {
-  return (
-    <article className={`recipe-card${compact ? " compact" : ""}`}>
+  const cardContent = (
+    <>
       <div className="recipe-image-wrapper">
         <img src={imageSrc} alt={title} />
       </div>
@@ -20,11 +20,23 @@ const RecipeCard = ({ id, imageSrc, title, description, tags, prepMinutes, cookM
         <span>Prep: {prepMinutes} min</span>
         <span>Cook: {cookMinutes} min</span>
       </div>
-      {!compact ? (
-        <Link to={`/view-recipe/${id}`} className="btn-view-recipe">
-          View Recipe
-        </Link>
-      ) : null}
+    </>
+  );
+
+  if (compact) {
+    return (
+      <Link to={id ? `/view-recipe/${id}` : "/recipes"} className="recipe-card compact recipe-card-link">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  return (
+    <article className="recipe-card">
+      {cardContent}
+      <Link to={`/view-recipe/${id}`} className="btn-view-recipe">
+        View Recipe
+      </Link>
     </article>
   );
 };

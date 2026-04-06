@@ -1,14 +1,25 @@
+import { useState } from "react";
 import "../css/RecipeControlsPreview.css";
 
+const FILTERS = ["High-Protein", "Low-Carb", "Gut-Friendly", "Anti-Inflammatory"];
+
 const RecipeControlsPreview = () => {
+  const [activeFilter, setActiveFilter] = useState("High-Protein");
+
   return (
-    <section className="recipes-controls" aria-label="Recipe controls preview">
-      <input type="text" className="recipe-search" placeholder="Search recipes, ingredients, or diets..." readOnly />
+    <section className="recipes-controls" aria-label="Recipe controls">
+      <input type="text" className="recipe-search" placeholder="Search recipes, ingredients, or diets..." />
       <div className="filter-tags">
-        <button type="button" className="filter-btn active">High-Protein</button>
-        <button type="button" className="filter-btn">Low-Carb</button>
-        <button type="button" className="filter-btn">Gut-Friendly</button>
-        <button type="button" className="filter-btn">Anti-Inflammatory</button>
+        {FILTERS.map(filter => (
+          <button
+            key={filter}
+            type="button"
+            className={`filter-btn${activeFilter === filter ? " active" : ""}`}
+            onClick={() => setActiveFilter(filter)}
+          >
+            {filter}
+          </button>
+        ))}
       </div>
     </section>
   );

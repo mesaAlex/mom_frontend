@@ -57,10 +57,22 @@
 }
 
 @media (max-width: 900px) {
+	.date-selector {
+		flex-wrap: wrap;
+	}
+
+	.meal-planner-container {
+		gap: 20px;
+	}
 }
 
 @media (max-width: 600px) {
 	.planner-hero h1 {
 		font-size: 1.8rem;
+	}
+
+	.date-selector {
+		flex-direction: column;
+		align-items: flex-start;
 	}
 }

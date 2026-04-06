@@ -81,8 +81,10 @@
   background: #6b4332;
 }
 
-.recipe-card.compact .btn-view-recipe {
-  display: none;
+.recipe-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 @media (max-width: 600px) {
