@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 import TitledListCard from "./TitledListCard";
 import "../css/ContactPreviewCard.css";
 
@@ -15,11 +16,7 @@ const ContactPreviewCard = () => {
     formData.append("access_key", "76c3bfa7-dfcf-4a43-bb4e-24dc0c2bd935");
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
-      });
-      const data = await response.json();
+      const { data } = await axios.post("https://api.web3forms.com/submit", formData);
 
       if (data.success) {
         setResult("Form submitted successfully.");

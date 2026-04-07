@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 import RecipeCard from "../components/RecipeCard";
 import RecipeControlsPreview from "../components/RecipeControlsPreview";
 import RecipesSlideshow from "../components/RecipesSlideshow";
@@ -12,17 +13,13 @@ const Recipes = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(`${API_BASE_URL}/api/recipes`)
+        axios.get(`${API_BASE_URL}/api/recipes`)
             .then(res => {
-                if (!res.ok) throw new Error("Failed to load recipes");
-                return res.json();
-            })
-            .then(data => {
-                setRecipes(data);
+                setRecipes(res.data);
                 setLoading(false);
             })
             .catch(err => {
-                setError(err.message);
+                setError(err.response?.data?.message || err.message);
                 setLoading(false);
             });
     }, []);

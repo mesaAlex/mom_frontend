@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 import "../css/View-recipe.css";
 import RecipeBreadcrumb from "../components/RecipeBreadcrumb";
 import RecipeHeaderSection from "../components/RecipeHeaderSection";
@@ -15,12 +16,9 @@ const ViewRecipe = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/recipes/${id}`)
+    axios.get(`${API_BASE_URL}/api/recipes/${id}`)
       .then(res => {
-        if (!res.ok) throw new Error("Recipe not found");
-        return res.json();
-      })
-      .then(data => {
+        const data = res.data;
         setRecipe({
           ...data,
           imageSrc: `${API_BASE_URL}${data.image}`,
@@ -30,7 +28,7 @@ const ViewRecipe = () => {
         setLoading(false);
       })
       .catch(err => {
-        setError(err.message);
+        setError(err.response?.data?.message || err.message);
         setLoading(false);
       });
   }, [id]);
