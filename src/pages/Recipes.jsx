@@ -4,6 +4,7 @@ import RecipeCard from "../components/RecipeCard";
 import RecipeControlsPreview from "../components/RecipeControlsPreview";
 import RecipesSlideshow from "../components/RecipesSlideshow";
 import SectionIntro from "../components/SectionIntro";
+import AddRecipe from "../components/AddRecipe";
 import API_BASE_URL from "../api";
 import "../css/Recipes.css";
 
@@ -11,6 +12,19 @@ const Recipes = () => {
     const [recipes, setRecipes] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [showAddDialog, setShowAddDialog] = useState(false);
+
+    const openAddDialog = () => {
+        setShowAddDialog(true);
+    };
+
+    const closeAddDialog = () => {
+        setShowAddDialog(false);
+    };
+
+    const addRecipeToList = (recipe) => {
+        setRecipes((recipes) => [...recipes, recipe]);
+    };
 
     useEffect(() => {
         axios.get(`${API_BASE_URL}/api/recipes`)
@@ -33,6 +47,17 @@ const Recipes = () => {
                     description="Browse and save recipes that match your goals."
                     descriptionClassName="recipes-subtext"
                 />
+
+                <button className="btn primary btn-add-recipe" onClick={openAddDialog}>
+                    + Add Recipe
+                </button>
+
+                {showAddDialog && (
+                    <AddRecipe
+                        closeAddDialog={closeAddDialog}
+                        addRecipeToList={addRecipeToList}
+                    />
+                )}
 
                 <RecipesSlideshow />
 

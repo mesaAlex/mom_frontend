@@ -26,6 +26,12 @@
 	margin: 0;
 }
 
+.btn-add-recipe {
+	margin-bottom: 20px;
+	font: inherit;
+	font-size: 0.95rem;
+}
+
 .recipes-status {
 	margin: 0 0 18px;
 	color: var(--accent);
