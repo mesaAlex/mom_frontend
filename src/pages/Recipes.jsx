@@ -77,6 +77,10 @@ const Recipes = () => {
                             tags={recipe.tags}
                             prepMinutes={recipe.prepMinutes}
                             cookMinutes={recipe.cookMinutes}
+                            servings={recipe.servings}
+                            calories={recipe.calories}
+                            ingredients={recipe.ingredients}
+                            instructions={recipe.instructions}
                         />
                     ))}
                 </section>
