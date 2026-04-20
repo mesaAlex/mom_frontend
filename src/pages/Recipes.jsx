@@ -5,6 +5,7 @@ import RecipeControlsPreview from "../components/RecipeControlsPreview";
 import RecipesSlideshow from "../components/RecipesSlideshow";
 import SectionIntro from "../components/SectionIntro";
 import AddRecipe from "../components/AddRecipe";
+import EditRecipe from "../components/EditRecipe";
 import API_BASE_URL from "../api";
 import "../css/Recipes.css";
 
@@ -13,6 +14,8 @@ const Recipes = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [showAddDialog, setShowAddDialog] = useState(false);
+    const [editingRecipe, setEditingRecipe] = useState(null);
+    const [statusMessage, setStatusMessage] = useState("");
 
     const openAddDialog = () => {
         setShowAddDialog(true);
@@ -24,6 +27,39 @@ const Recipes = () => {
 
     const addRecipeToList = (recipe) => {
         setRecipes((recipes) => [...recipes, recipe]);
+    };
+
+    const handleEdit = (recipe) => {
+        setEditingRecipe(recipe);
+    };
+
+    const closeEditDialog = () => {
+        setEditingRecipe(null);
+    };
+
+    const updateRecipeInList = (updatedRecipe) => {
+        setRecipes((prev) =>
+            prev.map((r) => (r.id === updatedRecipe.id ? updatedRecipe : r))
+        );
+        setStatusMessage("Recipe updated successfully!");
+        setTimeout(() => setStatusMessage(""), 4000);
+    };
+
+    const handleDelete = async (id) => {
+        if (!window.confirm("Are you sure you want to delete this recipe?")) return;
+
+        try {
+            const response = await axios.delete(`${API_BASE_URL}/api/recipes/${id}`);
+            if (response.status === 200) {
+                setRecipes((prev) => prev.filter((r) => r.id !== id));
+                setStatusMessage("Recipe deleted successfully!");
+                setTimeout(() => setStatusMessage(""), 4000);
+            }
+        } catch (err) {
+            const msg = err.response?.data?.error || err.message;
+            setStatusMessage("Delete failed: " + msg);
+            setTimeout(() => setStatusMessage(""), 4000);
+        }
     };
 
     useEffect(() => {
@@ -59,6 +95,20 @@ const Recipes = () => {
                     />
                 )}
 
+                {editingRecipe && (
+                    <EditRecipe
+                        recipe={editingRecipe}
+                        closeEditDialog={closeEditDialog}
+                        updateRecipeInList={updateRecipeInList}
+                    />
+                )}
+
+                {statusMessage && (
+                    <p className={`recipes-status-message ${statusMessage.startsWith("Delete failed") ? "recipes-error" : "recipes-success"}`}>
+                        {statusMessage}
+                    </p>
+                )}
+
                 <RecipesSlideshow />
 
                 <RecipeControlsPreview />
@@ -81,6 +131,8 @@ const Recipes = () => {
                             calories={recipe.calories}
                             ingredients={recipe.ingredients}
                             instructions={recipe.instructions}
+                            onEdit={handleEdit}
+                            onDelete={handleDelete}
                         />
                     ))}
                 </section>

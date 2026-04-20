@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../css/RecipeCard.css";
 
-const RecipeCard = ({ id, imageSrc, title, description, tags, prepMinutes, cookMinutes, servings, calories, ingredients, instructions, compact = false }) => {
+const RecipeCard = ({ id, imageSrc, title, description, tags, prepMinutes, cookMinutes, servings, calories, ingredients, instructions, compact = false, onEdit, onDelete }) => {
   const recipeState = { id, imageSrc, title, description, tags, prepMinutes, cookMinutes, servings, calories, ingredients, instructions };
   const cardContent = (
     <>
@@ -39,13 +39,33 @@ const RecipeCard = ({ id, imageSrc, title, description, tags, prepMinutes, cookM
   return (
     <article className="recipe-card">
       {cardContent}
-      <Link
-        to={`/view-recipe/${id}`}
-        state={{ recipe: recipeState }}
-        className="btn-view-recipe"
-      >
-        View Recipe
-      </Link>
+      <div className="recipe-card-actions">
+        <Link
+          to={`/view-recipe/${id}`}
+          state={{ recipe: recipeState }}
+          className="btn-view-recipe"
+        >
+          View Recipe
+        </Link>
+        {onEdit && (
+          <button
+            type="button"
+            className="btn-edit-recipe"
+            onClick={() => onEdit(recipeState)}
+          >
+            Edit
+          </button>
+        )}
+        {onDelete && (
+          <button
+            type="button"
+            className="btn-delete-recipe"
+            onClick={() => onDelete(id)}
+          >
+            Delete
+          </button>
+        )}
+      </div>
     </article>
   );
 };

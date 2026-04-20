@@ -65,8 +65,6 @@
 
 .btn-view-recipe {
   display: block;
-  width: calc(100% - 24px);
-  margin: 0 12px 12px;
   padding: 8px 12px;
   background: var(--accent);
   color: #fff;
@@ -75,10 +73,47 @@
   font-weight: 500;
   text-decoration: none;
   text-align: center;
+  flex: 1;
 }
 
 .btn-view-recipe:hover {
   background: #6b4332;
+}
+
+.recipe-card-actions {
+  display: flex;
+  gap: 8px;
+  padding: 0 12px 12px;
+}
+
+.btn-edit-recipe,
+.btn-delete-recipe {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+.btn-edit-recipe {
+  background: var(--muted);
+  color: #fff;
+}
+
+.btn-edit-recipe:hover {
+  background: #5f8274;
+}
+
+.btn-delete-recipe {
+  background: #c0392b;
+  color: #fff;
+}
+
+.btn-delete-recipe:hover {
+  background: #a93226;
 }
 
 .recipe-card-link {
