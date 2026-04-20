@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/mom_frontend/static/css/main.07d409af.css",
-    "main.js": "/mom_frontend/static/js/main.0733fd2a.js",
+    "main.css": "/mom_frontend/static/css/main.5b845ed6.css",
+    "main.js": "/mom_frontend/static/js/main.881650a1.js",
     "static/media/texture_midsection.jpeg": "/mom_frontend/static/media/texture_midsection.8afea452e98611fc60a3.jpeg",
     "static/media/checklist_icon.png": "/mom_frontend/static/media/checklist_icon.cfdc7daccac1f19700a3.png",
     "static/media/account_page_background.png": "/mom_frontend/static/media/account_page_background.94c882b75e9acc182c59.png",
@@ -19,11 +19,11 @@
     "static/media/slide_3_meals_on_mesa.png": "/mom_frontend/static/media/slide_3_meals_on_mesa.cd146709b93609cc95e4.png",
     "static/media/slide_2_meals_on_mesa.png": "/mom_frontend/static/media/slide_2_meals_on_mesa.e2975048db2a1c5b6e70.png",
     "index.html": "/mom_frontend/index.html",
-    "main.07d409af.css.map": "/mom_frontend/static/css/main.07d409af.css.map",
-    "main.0733fd2a.js.map": "/mom_frontend/static/js/main.0733fd2a.js.map"
+    "main.5b845ed6.css.map": "/mom_frontend/static/css/main.5b845ed6.css.map",
+    "main.881650a1.js.map": "/mom_frontend/static/js/main.881650a1.js.map"
   },
   "entrypoints": [
-    "static/css/main.07d409af.css",
-    "static/js/main.0733fd2a.js"
+    "static/css/main.5b845ed6.css",
+    "static/js/main.881650a1.js"
   ]
 }
