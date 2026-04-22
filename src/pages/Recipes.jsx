@@ -9,6 +9,11 @@ import EditRecipe from "../components/EditRecipe";
 import API_BASE_URL from "../api";
 import "../css/Recipes.css";
 
+const normalizeRecipe = (recipe) => ({
+    ...recipe,
+    id: recipe.id || recipe._id,
+});
+
 const Recipes = () => {
     const [recipes, setRecipes] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -26,7 +31,7 @@ const Recipes = () => {
     };
 
     const addRecipeToList = (recipe) => {
-        setRecipes((recipes) => [...recipes, recipe]);
+        setRecipes((recipes) => [...recipes, normalizeRecipe(recipe)]);
     };
 
     const handleEdit = (recipe) => {
@@ -38,8 +43,9 @@ const Recipes = () => {
     };
 
     const updateRecipeInList = (updatedRecipe) => {
+        const normalizedUpdated = normalizeRecipe(updatedRecipe);
         setRecipes((prev) =>
-            prev.map((r) => (r.id === updatedRecipe.id ? updatedRecipe : r))
+            prev.map((r) => (r.id === normalizedUpdated.id ? normalizedUpdated : r))
         );
         setStatusMessage("Recipe updated successfully!");
         setTimeout(() => setStatusMessage(""), 4000);
@@ -65,7 +71,7 @@ const Recipes = () => {
     useEffect(() => {
         axios.get(`${API_BASE_URL}/api/recipes`)
             .then(res => {
-                setRecipes(res.data);
+                setRecipes(res.data.map(normalizeRecipe));
                 setLoading(false);
             })
             .catch(err => {
