@@ -117,13 +117,14 @@ const AddRecipe = (props) => {
         body: formData,
       });
 
-      if (response.status === 200) {
+      if (response.ok) {
         const newRecipe = await response.json();
         setResult("Recipe added successfully!");
         props.addRecipeToList(newRecipe);
         props.closeAddDialog();
       } else {
-        const message = await response.text();
+        const errorPayload = await response.json().catch(() => null);
+        const message = errorPayload?.error || errorPayload?.message || `Request failed with status ${response.status}`;
         setResult("Error: " + message);
       }
     } catch {
